@@ -38,7 +38,7 @@ namespace DeepBlue.Presentation.Controllers
 
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(ProdutoConsultaModel), 200)]
-        public IActionResult GET(Guid id)
+        public IActionResult GETById(Guid id)
         {
             return Ok();
         }
