@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DeepBlue.Presentation.Models;
+using DeepBlue.Presentation.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DeepBlue.Presentation.Controllers
+namespace DeepBlue.Presentation.API.Controllers
 {
     [Route("api/[controller]")]
     public class ProdutoController : Controller
