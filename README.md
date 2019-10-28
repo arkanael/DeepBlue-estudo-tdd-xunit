@@ -29,10 +29,14 @@ DataBase simulada com ConcurrentDictionary
 Para explorar e testar a API, basta executar o projeto e usar a interface do usuário do Swagger.
 
 A API incluem os seguintes endpoints REST:
-- POST	/api/produto		- Registra um novo produto.								    [implementado]
-- PUT		/api/produto		- Atualiza um produto registrado no sistema.			[implementando]
-- DELETE	/api/Produto/{id}	- Apaga um produto registrado no sistema.				[implementando]
-- GET		/api/produto		- Exibe todos os produtos registrado no sistema.		[implementando]
-- GET		/api/Produto/{id}	- Exibe apenas o produto com id registrado no sistema.	[implementando]
+- POST	/api/produto		- Registra um novo produto.		
+
+- PUT		/api/produto		- Atualiza um produto registrado no sistema.	
+
+- DELETE	/api/Produto/{id}	- Apaga um produto registrado no sistema.	
+
+- GET		/api/produto		- Exibe todos os produtos registrado no sistema.	
+	
+- GET		/api/Produto/{id}	- Exibe apenas o produto com id registrado no sistema.
 
 Projeto não finalizado.
