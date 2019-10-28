@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using DeepBlue.Infra.Data.Contracts.Repository;
+using DeepBlue.Infra.Data.Entities;
 using DeepBlue.Presentation.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,14 +15,26 @@ namespace DeepBlue.Presentation.Controllers
     public class ProdutoController : Controller
     {
         [HttpPost]
-        public IActionResult POST([FromBody] ProdutoCadastroModel model)
+        public IActionResult POST([FromBody] ProdutoCadastroModel model, 
+            [FromServices] IProdutoRepository repository,
+            [FromServices] IMapper mapper)
         {
+
+            var produto = mapper.Map<Produto>(model);
+            repository.Create(produto);
+
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult PUT([FromBody] ProdutoEdicaoModel model)
+        public IActionResult PUT([FromBody] ProdutoEdicaoModel model,
+             [FromServices] IProdutoRepository repository,
+            [FromServices] IMapper mapper)
         {
+            var produto = mapper.Map<Produto>(model);
+
+            repository.Update(produto);
+
             return Ok();
         }
 

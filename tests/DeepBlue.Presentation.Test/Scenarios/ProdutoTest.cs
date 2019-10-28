@@ -1,4 +1,5 @@
-﻿using DeepBlue.Presentation.Models;
+﻿using DeepBlue.Infra.Data.Entities;
+using DeepBlue.Presentation.Models;
 using FluentAssertions;
 using Newtonsoft.Json;
 using System;
@@ -15,7 +16,7 @@ namespace DeepBlue.Presentation.Test.Scenarios
         private readonly TestContext testContext;
 
         private readonly string endPoint;
-
+                
         public ProdutoTest()
         {
             testContext = new TestContext();
@@ -42,6 +43,7 @@ namespace DeepBlue.Presentation.Test.Scenarios
         [Fact]
         public async Task Produto_Put_ReturnsOkResponse()
         {
+            
             var model = new ProdutoEdicaoModel
             {
                 Id = Guid.NewGuid(),
@@ -49,6 +51,7 @@ namespace DeepBlue.Presentation.Test.Scenarios
                 Preco = 100m,
                 Quantidade = 10
             };
+
 
             var request = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
 

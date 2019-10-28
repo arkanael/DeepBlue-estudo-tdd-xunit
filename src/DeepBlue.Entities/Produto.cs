@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace DeepBlue.Presentation.API.Models
+namespace DeepBlue.Entities
 {
-    public class ProdutoConsultaModel
+    public class Produto
     {
         public Guid Id { get; set; }
         public string Nome { get; set; }
         public decimal Preco { get; set; }
         public int Quantidade { get; set; }
-        public decimal Total { get; set; }
+        public int CategoriaId { get; set; }
+        public Categoria Categoria { get; set; }
     }
 }

@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using DeepBlue.Infra.Data.Contracts.Repository;
+using DeepBlue.Infra.Data.Entities;
+using DeepBlue.Infra.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +32,11 @@ namespace DeepBlue.Presentation
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+
+            services.AddSingleton<IProdutoRepository, ProdutoRepository>(map => new ProdutoRepository(new ConcurrentDictionary<Guid, Produto>()));
+
+            services.AddAutoMapper(typeof(Startup));
+
             services.AddSwaggerGen(
                   swagger =>
                   {
@@ -38,9 +48,9 @@ namespace DeepBlue.Presentation
                               Description = "Curso de C# WebDeveloper Avançado",
                               Contact = new Contact
                               {
-                                  Name = "COTI Informática",
-                                  Url = "http://www.cotiinformatica.com.br",
-                                  Email = "contato@cotiinformatica.com.br"
+                                  Name = "Luiz Guilherme Bandeira",
+                                  Url = "https://www.linkedin.com/in/lbandeira/",
+                                  Email = "arkanael@gmail.com"
                               }
                           });
                   }
