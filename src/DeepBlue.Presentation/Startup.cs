@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
+using DeepBlue.Entities;
 using DeepBlue.Infra.Data.Contracts.Repository;
-using DeepBlue.Infra.Data.Entities;
 using DeepBlue.Infra.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -15,6 +10,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
+using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace DeepBlue.Presentation
 {
@@ -43,9 +43,9 @@ namespace DeepBlue.Presentation
                       swagger.SwaggerDoc("v1",
                           new Info
                           {
-                              Title = "Sistema Asp.Net Web API - Controle de Produtos",
+                              Title = "DeepBlue - Sistema para registro de Produtos",
                               Version = "v1",
-                              Description = "Curso de C# WebDeveloper Avançado",
+                              Description = "Projeto desenvolvido em .NET CORE para o estudo do TDD, realizando rotinas de testes nos métodos POST, PUT, DELETE, GET que são responsaveis por manipular os dados da API.",
                               Contact = new Contact
                               {
                                   Name = "Luiz Guilherme Bandeira",
@@ -70,7 +70,7 @@ namespace DeepBlue.Presentation
             app.UseSwaggerUI(
                     swagger =>
                     {
-                        swagger.SwaggerEndpoint("/swagger/v1/swagger.json", "Projeto");
+                        swagger.SwaggerEndpoint("/swagger/v1/swagger.json", "DeepBlue");
                     }
                 );
         }

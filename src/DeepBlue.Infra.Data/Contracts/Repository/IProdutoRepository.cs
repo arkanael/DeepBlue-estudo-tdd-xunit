@@ -1,4 +1,4 @@
-﻿using DeepBlue.Infra.Data.Entities;
+﻿using DeepBlue.Entities;
 
 namespace DeepBlue.Infra.Data.Contracts.Repository
 {

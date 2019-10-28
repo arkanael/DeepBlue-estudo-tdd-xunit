@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using DeepBlue.Infra.Data.Entities;
+using DeepBlue.Entities;
 using DeepBlue.Presentation.Models;
 using System;
 using System.Collections.Generic;

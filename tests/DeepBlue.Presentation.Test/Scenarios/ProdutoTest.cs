@@ -1,5 +1,4 @@
-﻿using DeepBlue.Infra.Data.Entities;
-using DeepBlue.Presentation.Models;
+﻿using DeepBlue.Presentation.Models;
 using FluentAssertions;
 using Newtonsoft.Json;
 using System;
@@ -11,6 +10,7 @@ using Xunit;
 
 namespace DeepBlue.Presentation.Test.Scenarios
 {
+    
     public class ProdutoTest
     {
         private readonly TestContext testContext;
@@ -38,6 +38,23 @@ namespace DeepBlue.Presentation.Test.Scenarios
             var response = await testContext.Client.PostAsync(endPoint, request);
 
             response.StatusCode.Should().Be(HttpStatusCode.OK);
+        }
+
+        [Fact]
+        public async Task Produto_Post_Returns400Response()
+        {
+            var model = new ProdutoCadastroModel
+            {
+                Nome = null,
+                Preco = 100m,
+                Quantidade = 10
+            };
+
+            var request = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
+
+            var response = await testContext.Client.PostAsync(endPoint, request);
+
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
         }
 
         [Fact]

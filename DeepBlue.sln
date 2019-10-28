@@ -15,9 +15,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Camada de Infraestrutur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeepBlue.Infra.Data", "src\DeepBlue.Infra.Data\DeepBlue.Infra.Data.csproj", "{66CC8F43-E1F4-4A1A-9544-76FC65A190DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepBlue.Entities", "src\DeepBlue.Entities\DeepBlue.Entities.csproj", "{C3077564-2C0C-4972-B3CF-BACEEABC210B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeepBlue.Entities", "src\DeepBlue.Entities\DeepBlue.Entities.csproj", "{C3077564-2C0C-4972-B3CF-BACEEABC210B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Camada de Entidades", "2 - Camada de Entidades", "{8DF7621C-E2B3-431B-8209-ED1400188EE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0D7D45B7-CFBB-4335-B286-24ABBBF25A2D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

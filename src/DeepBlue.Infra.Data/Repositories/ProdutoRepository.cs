@@ -1,9 +1,9 @@
 ﻿using DeepBlue.Infra.Data.Contracts.Repository;
-using DeepBlue.Infra.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
 using System.Linq;
+using DeepBlue.Entities;
 
 namespace DeepBlue.Infra.Data.Repositories
 {
@@ -18,12 +18,16 @@ namespace DeepBlue.Infra.Data.Repositories
 
         public void Create(Produto produto)
         {
+            
             context[produto.Id] = produto;
         }
 
         public void Update(Produto produto)
         {
-            context[produto.Id] = produto;
+            if (context.Values.SingleOrDefault(p => p.Id.Equals(produto.Id)) != null)
+            {
+                context[produto.Id] = produto;
+            }
         }
 
         public Produto Remove(Guid id)
